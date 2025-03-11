@@ -2,9 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Configuration
-.AddJsonFile("appsettings.json")
-    .AddEnvironmentVariables();
+builder.Configuration.AddAzureAppConfiguration("Endpoint=https://applicationconfig101.azconfig.io;Id=2ZdA;Secret=Ex7jITQR0RIqTmtSdikpddyDRH81uJ9CSTZBKO7IXvRh3k6TwuJzJQQJ99BCAC3pKaRRboOdAAABAZACrgix");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,8 +23,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-
-
-//   "ConnectionStrings": {
-//     "AZURE_SQL_CONNECTIONSTRING": "Server=tcp:appserver101.database.windows.net,1433;Initial Catalog=appdb;Persist Security Info=False;User ID=sqladmin;Password=Chat.work@007;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-// }
